@@ -7,6 +7,6 @@
 #include<cstring>
 using namespace std;
 
-string hash(string);
+string sha256(string);
 
 #endif
