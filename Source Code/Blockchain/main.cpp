@@ -1,9 +1,9 @@
 #include<iostream>
-#include "SHA256.h"
+#include<cstdlib>
+//#include "SHA256.h"
 using namespace std;
 
 int main(){
-
-    string newstr = sha256("aniket");
+   cout<<"Sample"<<endl;
     return 0;
 }
