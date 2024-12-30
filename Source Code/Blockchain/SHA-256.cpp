@@ -90,12 +90,33 @@ string hexOutput(void* buffer, size_t len)
     return hexString;
 }
 
+streamsize getFileSize(const std::string& filename) {
+    // Open the file in binary mode
+    std::ifstream file(filename, std::ios::binary | std::ios::ate);
+    if (!file.is_open()) {
+        std::cerr << "Error: Could not open the file: " << filename << std::endl;
+        return -1;
+    }
+
+    // Get the size of the file
+    std::streamsize fileSize = file.tellg();
+
+    // Close the file
+    file.close();
+
+    return fileSize;
+}
+
 
 // Hash function implementation
-string sha256(string input)
+string sha256()
 {   
-    const char* cstr = input.c_str();
-    size_t inpLength = input.length();
+    fstream f1;
+    string file = "../../VotingQueueList/newblock.txt";
+    f1.open(file);
+    const char* cstr;
+    f1 << cstr;
+    size_t inpLength = getFileSize(file);
 
     char* msg =  new char[inpLength+1];
     memcpy(msg , cstr , inpLength+1);
